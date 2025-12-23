@@ -1,0 +1,33 @@
+public class ArraysCC {
+    public static int findItems (String[] menu, String item) {
+        for (int i = 0; i < menu.length; i++) {
+            if (menu[i].equalsIgnoreCase(item)) {
+                return i; //item mil gya
+            }
+        }
+        return -1; //item nhi mila
+    }
+
+    public static void main (String[] args) {
+        // String array of menu items
+        String[] menuItems = {
+            "Dosa",
+            "Chola",
+            "Samosa",
+            "Sandwich",
+            "Frooti",
+            "Coke"
+            };
+
+            // Search items
+            String searchItem = "coke";
+
+            int result  = findItems (menuItems, searchItem);
+
+            if (result != -1) {
+                System.out.println(searchItem + " found at index: " + result);
+            } else {
+                System.out.println(searchItem + " not found. Result: " + result);
+            }
+    }
+}
