@@ -1,0 +1,85 @@
+Example 1:
+Input:
+ arr[] = {2, 5, 1, 3, 0}  
+Output:
+ 5  
+Explanation:
+  
+5 is the largest element in the array.
+
+Example 2:
+Input:
+ arr[] = {8, 10, 5, 7, 9}  
+Output:
+ 10  
+Explanation:
+  
+10 is the largest element in the array.
+
+// Brute Force Approach
+// import java.util.*;
+// public class JavaBasics {
+//     public static int sortArr(int[] arr) {
+//         // sort the array in ascending order 
+//         Arrays.sort(arr);
+
+//         // Return the last element (largest elemrnt) after sorting
+//         return arr[arr.length - 1];
+//     }
+
+//     public static void main (String [] args ) {
+//         int [] arr1 = {2,5,1,3,0};
+//         int [] arr2 = {8,10,5,7,9};
+
+//         // Find the output the largest elemnt in both arrays
+//         System.out.println("The Largest elemnt in the array is: " + JavaBasics.sortArr(arr1));
+//         System.out.println("The Largest elemnt in the array is: " + JavaBasics.sortArr(arr2));
+//     }
+// }
+
+
+// Optimal approach
+// import java.util.*;
+// public class JavaBasics {
+//     public static int getLargest (int [] arr) {
+//         // Step:1 assume first element is maximum
+//         int max = arr[0];
+
+//         // Step:2 loop through remaining elements
+//         for (int i=1; i < arr.length; i++) {
+
+//             // step:3 compare current element with max
+//             if (arr[i] > max) {
+//                 max = arr[i]; //update max
+//             }
+//         }
+
+//         // Step 4: return largest element
+//         return max;
+//     }
+
+//     public static void main(String [] args) {
+//         int [] arr = {2, 5, 1, 3, 0};
+//         System.out.println("Largest elemnt is: " + getLargest(arr));
+//     }
+// }
+
+import java.util.*;
+public class JavaBasics {
+    public static int getLargest (int numbers[]) {
+        int largest = Integer.MIN_VALUE; // -INFINITY
+        
+        for (int i=1; i < numbers.length; i++) {
+            if (largest < numbers[i]) {
+                largest = numbers[i];
+            }
+        }
+
+        return largest;
+    }
+
+    public static void main (String [] args) {
+        int numbers [] ={1,2,6,3,5};
+        System.out.println("Largest no is: " + getLargest(numbers));
+    }
+}
